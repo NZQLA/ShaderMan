@@ -1,7 +1,12 @@
 
 # Bug/Error 
 - [x] **一定会出现** 会将```iResolution```转换为1，这将直接导致错误
-  - 在变量区加上```uniform vec3 iResolution; ```即可
+  - 方法1： 在变量区加上```uniform vec3 iResolution; ```，这种方法有时候会导致其它问题
+  - 推荐方法：uv处理时使用```TRANSFORM_TEX```代替```uv/iResolution.xy.```png
+    1. 需要在变量区引入``` float4 _MainTex_ST;```
+    2. 在顶点着色器就对uv进行处理
+    3. 在片元着色器直接使用uv
+    - ![uv处理时使用TRANSFORM_TEX代替uv除以iResolution.xy.png](./Images/Issues/uv处理时使用TRANSFORM_TEX代替uv除以iResolution.xy.png)
 
 - [ ] **一定会出现** 将OpenGL的```Texture```转换为HLSL的```tex2Dlod```方法时出错，因为[TextureLod](https://registry.khronos.org/OpenGL-Refpages/gl4/html/textureLod.xhtml)是3个参数，而[tex2Dlod](https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-tex2dlod)是2个参数
 
