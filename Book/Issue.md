@@ -1,4 +1,8 @@
 
+# Useful Document
+- [MappingBetweenHLSLandGLSL](MappingBetweenHLSLandGLSL.md)
+
+
 # Bug/Error 
 - [x] **一定会出现** 会将```iResolution```转换为1，这将直接导致错误
   - 方法1： 在变量区加上```uniform vec3 iResolution; ```，这种方法有时候会导致其它问题
