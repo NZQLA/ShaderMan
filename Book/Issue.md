@@ -11,7 +11,7 @@
 - [ ] **偶尔出现** 将```MainImage```转换为片元着色器时，可以没有```return```,因为ShaderToy的```MainImage```的最后一行一般是```fragColor = vec4()``` 
 - [ ]  可能会出现重复生成的情况，比如```fixed3 init = fixed3(sin(time * .0032, sin(time * .0032, sin(time * .0032) * .3, .35 - cos(time * .005) * .3, time * 0.002);```中重复生成了```sin(time * .0032```
 - [x]  ```END CG```位置可能出现错误，放在了函数里面 
-![ENDCG位置错误](Images/Issues/ENDCG位置错误.png)
+- ![ENDCG位置错误](Images/Issues/ENDCG位置错误.png)
   - 解决办法：
     - 一般手动下移一行即可
     - 并且要注意一般会在代码末尾少一个```}```
